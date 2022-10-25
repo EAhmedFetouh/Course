@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc;
 using TranningApp.API.Data;
 using Microsoft.EntityFrameworkCore;
 using TranningApp.API.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace TranningApp.API.Controllers ; 
 
+    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
     // [DebuggerDisplay("{" + nameof(GetDebuggerDisplay) + "(),nq}")]
@@ -40,14 +42,15 @@ namespace TranningApp.API.Controllers ;
     [HttpGet("{id}")]
     [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Value))]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [AllowAnonymous]
     public async Task<IActionResult> GetValue(int id)
     {
             var value =await DbContext.Values.FirstOrDefaultAsync(x=>x.Id==id);
             return Ok(value);
     }
-     private string GetDebuggerDisplay()
-    {
-        return ToString();
-    }
+    //  private string GetDebuggerDisplay()
+    // {
+    //     return ToString();
+    // }
 }
    
