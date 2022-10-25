@@ -7,7 +7,7 @@ namespace TranningAPP.API.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-[DebuggerDisplay("{" + nameof(GetDebuggerDisplay) + "(),nq}")]
+// [DebuggerDisplay("{" + nameof(GetDebuggerDisplay) + "(),nq}")]
 public class WeatherForecastController : ControllerBase
 {
     private static readonly string[] Summaries = new[]
@@ -46,8 +46,8 @@ public class WeatherForecastController : ControllerBase
 
 
 
-    private string GetDebuggerDisplay()
-    {
-        return ToString();
-    }
+    // private string GetDebuggerDisplay()
+    // {
+    //     return ToString();
+    // }
 }
