@@ -31,6 +31,7 @@ namespace TranningApp.API.Controllers ;
     [HttpGet]
     [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Value))]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [AllowAnonymous]
     public async Task<IActionResult> GetValues()
     {
             var values =await DbContext.Values.ToListAsync();

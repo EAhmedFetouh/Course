@@ -16,8 +16,26 @@ font-family:ToyorAljanah;font-size:2.25rem;font-weight:bolder" class="navbar-bra
     <li class="nav-item">
       <a class="nav-link" href="#">دردشة</a>
     </li>
+    <li class="nav-item">
+      <a class="nav-link" *ngIf="LoggedIn()" (click)="LoggedOut()">خروج</a>
+    </li>
   </ul>
-  <form (ngSubmit)="Login()" #LoginForm="ngForm" class="form-inline my-2 my-lg-0 mr-auto">
+
+
+  <div class="dropdown mr-auto" style="letter-spacing:1px;font-weight:bold;font-family:'JF Flat';font-size:1.2rem">
+    <a *ngIf="LoggedIn()" class="dropdown-toggle nav-link">
+     مرحبا بك 
+    </a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item " > <i class="fa fa-user-o" aria-hidden="true"></i>
+        ملفى الشخصى</a>
+      <div class="dropdown-divider" ></div>
+      <a class="dropdown-item" > <i class="fa fa-sign-out" aria-hidden="true"></i>
+        تسجيل الخروج</a>
+    </div>
+  </div>
+
+  <form *ngIf="!LoggedIn()" (ngSubmit)="Login()" #LoginForm="ngForm" class="form-inline my-2 my-lg-0 mr-auto">
     <input name="UserName" required class="form-control mr-sm-2" type="text" [(ngModel)]="Model.UserName" placeholder="إسم المشترك">
     <input name="Password" required class="form-control mr-sm-2" type="password"  [(ngModel)]="Model.Password"  placeholder="كلمة السر">
     <button [disabled]="!LoginForm.valid" style="font-weight:bold;font-family:'JF Flat';font-size:1.0rem" class="btn btn-secondary my-2 my-sm-0" type="submit">تفضل
