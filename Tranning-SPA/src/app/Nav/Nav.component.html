@@ -25,6 +25,7 @@ font-family:ToyorAljanah;font-size:2.25rem;font-weight:bolder" class="navbar-bra
   <div class="dropdown mr-auto" style="letter-spacing:1px;font-weight:bold;font-family:'JF Flat';font-size:1.2rem">
     <a *ngIf="LoggedIn()" class="dropdown-toggle nav-link">
      مرحبا بك 
+     {{authService.decodedTokcken?.name |  titlecase}}
     </a>
     <div class="dropdown-menu">
       <a class="dropdown-item " > <i class="fa fa-user-o" aria-hidden="true"></i>

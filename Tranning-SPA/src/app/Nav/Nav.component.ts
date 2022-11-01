@@ -10,9 +10,11 @@ import { AuthService } from '../_Services/Auth.service';
 export class NavComponent implements OnInit {
 
   Model:any={};
-  constructor(private authService:AuthService , private alertify:AlertifyService) { }
+  username:any;
+  constructor(public authService:AuthService , private alertify:AlertifyService) { }
 
   ngOnInit() {
+    
   }
 
   Login(){
@@ -23,8 +25,7 @@ export class NavComponent implements OnInit {
   }
   LoggedIn()
   {
-      const Token = localStorage.getItem('token');  
-      return !! Token;
+     return  this.authService.LoggedIn();
   }
 
 
