@@ -7,9 +7,25 @@
   color:white !important;
 }
 
+.mnav-link{
+  color: black;
+  letter-spacing: 0.5px;
+  font-weight: bold;
+  font-family: 'JF Flat';
+  font-size: 1.0rem;
+}
+
 .btn-secondary:hover {
     text-decoration: none;
     color: black !important;
     background:pink !important
       }
 
+      .dropdown-item , .dropdown-toggle {
+        cursor: pointer;
+        
+      }
+
+      .dropdown-item:hover{
+        color: pink !important;
+      }

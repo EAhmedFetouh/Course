@@ -1,8 +1,9 @@
 @import "~bootstrap-4.1.3-rtl/css/bootstrap.css";
+@import "~bootswatch/dist/sketchy/bootstrap.min.css";
 @import "~font-awesome/css/font-awesome.min.css";
 @import "~alertifyjs/build/css/alertify.css";
 @import "~alertifyjs/build/css/themes/bootstrap.min.css";
-
+@import url("assets/MyStyle.css");
 
 @font-face {font-family: "JF Flat"; src: url( "./assets/fonts/JF-Flat-Regular.ttf");}
 @font-face {font-family: "ah-naskh-hadith"; src: url("./assets/fonts/18410-ah-naskh-hadith.ttf");}

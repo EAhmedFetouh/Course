@@ -11,7 +11,8 @@ import { RegisterComponent } from './Register/Register.component';
 import { HomeComponent } from './Home/Home.component';
 import { ErrorInterceptor } from './_Services/error.interceptor';
 import { AlertifyService } from './_Services/Alertify.service';
-
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [		
@@ -24,7 +25,9 @@ import { AlertifyService } from './_Services/Alertify.service';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BsDropdownModule.forRoot(),
+    BrowserAnimationsModule
   ],
   providers: [AuthService,ErrorInterceptor , AlertifyService],
   bootstrap: [AppComponent]
