@@ -11,10 +11,11 @@ import { RegisterComponent } from './Register/Register.component';
 import { HomeComponent } from './Home/Home.component';
 import { ErrorInterceptor } from './_Services/error.interceptor';
 import { AlertifyService } from './_Services/Alertify.service';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
 
 
 @NgModule({
-  declarations: [		
+  declarations: [
     AppComponent,
       NavComponent,
       RegisterComponent,
@@ -24,7 +25,7 @@ import { AlertifyService } from './_Services/Alertify.service';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,TooltipModule.forRoot()
   ],
   providers: [AuthService,ErrorInterceptor , AlertifyService],
   bootstrap: [AppComponent]
