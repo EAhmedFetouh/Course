@@ -25,7 +25,8 @@ export class AuthService {
     );
   }
 
-  Register(Model:any){
+  Register(Model:any)
+  {
     return this.Http.post(this.BaseUrl + "Register",Model);
   }
 

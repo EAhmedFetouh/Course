@@ -21,6 +21,7 @@
     background:pink !important
       }
 
+<<<<<<< HEAD
       .dropdown-item , .dropdown-toggle {
         cursor: pointer;
         
@@ -29,3 +30,8 @@
       .dropdown-item:hover{
         color: pink !important;
       }
+=======
+      .dropdown-toggle, .dropdown-item{
+  cursor: pointer;
+}
+>>>>>>> f88dfb3524e00a841ef0c59026529019f3e52201
