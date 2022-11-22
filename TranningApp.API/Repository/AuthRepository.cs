@@ -19,7 +19,7 @@ namespace TranningApp.API.Repository
     }        
         public async Task<User> Login(string UserName, string Password)
         {
-           var user = await DbContext.Users.FirstOrDefaultAsync(x=>x.UserName == UserName);
+           var user = await DbContext.Users.FirstOrDefaultAsync(x=>x.Username == UserName);
            if(user ==  null) return null;
            if(!VerfiyPasswordHash(Password , user.PasswordSalt, user.PasswordHash)) return null;
 
@@ -68,7 +68,7 @@ namespace TranningApp.API.Repository
 
         public async Task<bool> UserExists(string UserName)
         {
-            if(await DbContext.Users.AnyAsync(x=>x.UserName==UserName))
+            if(await DbContext.Users.AnyAsync(x=>x.Username==UserName))
             {
                 return  true;
             }

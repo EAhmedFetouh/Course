@@ -36,7 +36,7 @@ namespace TranningApp.API.Controllers
                 return BadRequest("هذا المستخدم مسجل من قبل");
 
                 var UserCreate = new User{
-                    UserName=userRegisterDto.UserName
+                    Username=userRegisterDto.UserName
                 };
 
                 var CreatedUser = await _Repo.Register(UserCreate , userRegisterDto.Password);
@@ -55,7 +55,7 @@ namespace TranningApp.API.Controllers
 
                var claims = new []{
                 new Claim(ClaimTypes.NameIdentifier,user.Id.ToString()),
-                new Claim(ClaimTypes.Name , user.UserName)
+                new Claim(ClaimTypes.Name , user.Username)
                } ;
 
                var Key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_IConfig.GetSection("AppSettings:Token").Value));

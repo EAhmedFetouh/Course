@@ -8,7 +8,7 @@ import { map } from 'rxjs';
 })
 export class AuthService {
   jwtHelper= new JwtHelperService();
-  BaseUrl = 'https://localhost:7031/api/auth/';
+  BaseUrl = 'https://localhost:44307/api/auth/';
   decodedTokcken :any;
   constructor(private Http: HttpClient) {}
 
