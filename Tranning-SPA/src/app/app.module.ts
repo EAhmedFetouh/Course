@@ -11,7 +11,6 @@ import { RegisterComponent } from './Register/Register.component';
 import { HomeComponent } from './Home/Home.component';
 import { ErrorInterceptor } from './_Services/error.interceptor';
 import { AlertifyService } from './_Services/Alertify.service';
-<<<<<<< HEAD
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MemberListComponent } from './Member-list/Member-list.component';
@@ -20,16 +19,13 @@ import { MessagesComponent } from './Messages/Messages.component';
 import { AppRoutes } from './routes';
 import { RouterModule } from '@angular/router';
 import { AuthGuard } from './_Guards/auth.guard';
-
-@NgModule({
-  declarations: [					
-=======
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { UserService } from './_Services/User.service';
 
 
 @NgModule({
   declarations: [
->>>>>>> f88dfb3524e00a841ef0c59026529019f3e52201
+
     AppComponent,
       NavComponent,
       RegisterComponent,
@@ -42,16 +38,15 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-<<<<<<< HEAD
     FormsModule,
     BsDropdownModule.forRoot(),
     BrowserAnimationsModule,
-    RouterModule.forRoot(AppRoutes)
-=======
+    RouterModule.forRoot(AppRoutes),
+
     FormsModule,TooltipModule.forRoot()
->>>>>>> f88dfb3524e00a841ef0c59026529019f3e52201
+
   ],
-  providers: [AuthService,ErrorInterceptor , AlertifyService, AuthGuard],
+  providers: [AuthService,ErrorInterceptor , AlertifyService, AuthGuard , UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
