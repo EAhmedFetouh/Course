@@ -19,17 +19,20 @@ font-family:ToyorAljanah;font-size:2.25rem;font-weight:bolder" class="navbar-bra
   </ul>
 
 
-  <div class="dropdown mr-auto" style="letter-spacing:1px;font-weight:bold;font-family:'JF Flat';font-size:1.2rem">
-    <a *ngIf="LoggedIn()" class="dropdown-toggle nav-link">
-     مرحبا بك 
-     {{authService.decodedTokcken?.name |  titlecase}}
+
+
+  <div *ngIf="LoggedIn()"  dropdown class="dropdown mr-auto" style="letter-spacing:1px;font-weight:bold;font-family:'JF Flat';font-size:1.2rem">
+    <a dropdownToggle 
+     class="dropdown-toggle nav-link text-light" *ngIf="LoggedIn()">
+      مرحبا بك
+      {{authService.decodedTokcken?.name | titlecase}}
     </a>
-    <div class="dropdown-menu">
-      <a class="dropdown-item " > <i class="fa fa-user-o" aria-hidden="true"></i>
+    <div *dropdownMenu class="dropdown-menu mt-3" >
+      <a class="dropdown-item" href="#"> <i class="fa fa-user-o" aria-hidden="true"></i>
         ملفى الشخصى</a>
-      <div class="dropdown-divider" ></div>
-      <a class="dropdown-item"  (click)="LoggedOut()"> <i class="fa fa-sign-out" aria-hidden="true"></i>
+      <a (click)="LoggedOut()" class="dropdown-item" href="#"><i class="fa fa-sign-out" aria-hidden="true"></i>
         تسجيل الخروج</a>
+      
     </div>
   </div>
 

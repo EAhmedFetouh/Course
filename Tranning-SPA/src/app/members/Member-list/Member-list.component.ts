@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../_models/User';
-import { AlertifyService } from '../_Services/Alertify.service';
-import { UserService } from '../_Services/User.service';
+import { UserService } from 'src/app/_Services/User.service';
+import { User } from 'src/app/_models/User';
+import { AlertifyService } from 'src/app/_Services/Alertify.service';
+
 
 @Component({
   selector: 'app-Member-list',
@@ -19,6 +20,7 @@ export class MemberListComponent implements OnInit {
   loadUsers(){
     this.userservice.getUsers().subscribe((users:User[])=>{
         this.users=users
+       
     },
     error=>this.alertfy.error(error)
     
