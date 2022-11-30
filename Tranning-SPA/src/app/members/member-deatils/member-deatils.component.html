@@ -1,0 +1,59 @@
+<div class=" container mt-4">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card">
+        <img class="card-img-top img-thumbnail" src="{{user?.PhotoURL}}" alt="{{user.KownAs}}">
+        <div class="card-body">
+          <div>
+              <strong>يقيم فى :</strong>
+              <p>{{user?.Country}} , {{user?.City}}</p>
+          </div>
+          <div>
+            <strong>العمر : </strong>
+            <p>{{user?.Age}}</p>
+        </div>
+        <div>
+          <strong>اخر ظهور :</strong>
+          <p>{{user?.LastActive}} </p>
+      </div>
+      <div>
+        <strong>مشترك منذ :</strong>
+        <p>{{user?.Created}} </p>
+    </div>
+        </div>
+
+        <div class="card-footer">
+            <div class="btn-group d-flex">
+                <button class="btn btn-primary w-100">اعجاب</button>
+                <button class="btn btn-success w-100">مراسله</button>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-8">
+        <div class="tab-panel">
+          <tabset class="member-tabset">
+            <tab heading="انا {{user?.KnownAs}}">
+              <h4>اعرفك بنفسى</h4>
+              <p>{{user?.Introduction}}</p>
+              <h4>ابحث عن</h4>
+              <p>{{user?.LookingFor}}</p>
+            </tab>
+            <tab heading="هواياتى">
+              <h4>هواياتى</h4>
+              <p>{{user?.Interests}}</p>
+            </tab>
+            <tab heading="البوم الصور">
+              <h4>البوم الصور</h4>
+              <p>القادم</p>
+            </tab>
+            <tab heading="الرسائل">
+              <h4>الرسائل </h4>
+              <p>القادم</p>
+            </tab>
+          </tabset>
+        </div>
+    </div>
+  </div>
+</div>

@@ -23,6 +23,8 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { UserService } from './_Services/User.service';
 import { MemberCardComponent } from './members/member-card/member-card.component';
 import { JwtModule } from '@auth0/angular-jwt';
+import { MemberDeatilsComponent } from './members/member-deatils/member-deatils.component';
+import { TabsModule } from 'ngx-bootstrap/tabs';
 
 export function tokenGetter() {
   return localStorage.getItem("token");
@@ -37,7 +39,8 @@ export function tokenGetter() {
       MemberListComponent,
       ListsComponent,
       MessagesComponent,
-      MemberCardComponent
+      MemberCardComponent,
+      MemberDeatilsComponent
    ],
   imports: [
     BrowserModule,
@@ -48,6 +51,7 @@ export function tokenGetter() {
     BrowserAnimationsModule,
     RouterModule.forRoot(AppRoutes),
     FormsModule,TooltipModule.forRoot(),
+   TabsModule.forRoot(),
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,
